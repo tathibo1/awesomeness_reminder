@@ -5,7 +5,7 @@ A Python application that generates uplifting messages using a local LLM (Ollama
 ## Overview
 
 This project uses:
-- **Ollama** with DeepSeek R1 model for generating positive messages
+- **LLM Providers**: Supports both Ollama (local) and Anthropic (Claude) for generating positive messages
 - **Gmail SMTP** for sending emails
 - **Python dotenv** for environment configuration
 
@@ -22,15 +22,27 @@ This project uses:
    pipenv install
    ```
 
-3. **Configure Ollama**
-   - Ensure Ollama is running on your network
+3. **Configure LLM Provider**
+   - For Ollama: Ensure Ollama is running on your network
+   - For Anthropic: Get your API key from https://console.anthropic.com/
 
 4. **Create environment file**
    Create a `.env` file with:
    ```
-   OLLAMA_HOST=http://your-ollama-host:11434
+   # Email configuration
    FROM_EMAIL=your-email@gmail.com
    GOOGLE_APP_PASSWORD=your-google-app-password
+   
+   # LLM configuration
+   LLM_PROVIDER=ollama  # or "anthropic"
+   
+   # Ollama settings
+   OLLAMA_HOST=http://your-ollama-host:11434
+   OLLAMA_MODEL=deepseek-r1:8b
+   
+   # Anthropic settings
+   ANTHROPIC_API_KEY=your-anthropic-api-key
+   ANTHROPIC_MODEL=claude-3-haiku-20240307  # or claude-3-sonnet-20240229, claude-3-opus-20240229
    ```
 
 5. **Add recipients**

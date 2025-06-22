@@ -9,6 +9,7 @@ langchain-ollama = "*"
 twilio = "*"
 requests = "*"
 python-dotenv = "*"
+langchain-anthropic = "*"
 
 [dev-packages]
 
