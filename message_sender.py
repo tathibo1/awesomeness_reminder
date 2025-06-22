@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-def send_email(body):
+def send_message(body):
     from_email = os.getenv("FROM_EMAIL")
     password = os.getenv("GOOGLE_APP_PASSWORD")
     subject = "Awesomeness Reminder"
