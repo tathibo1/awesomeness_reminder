@@ -1,6 +1,6 @@
 # Awesomeness Reminder
 
-A Python application that generates uplifting messages using a local LLM (Ollama) and sends them via email to a list of recipients. Perfect for sending daily motivational messages or positive affirmations.
+A Python application that generates ~~uplifting messages~~ a short quip about AI eminetly destroying humanity using an LLM and sends them via email to a list of recipients. It supports both local LLM use with ollama or services like anthropic.
 
 ## Overview
 
