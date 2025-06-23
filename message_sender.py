@@ -3,6 +3,7 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from dotenv import load_dotenv
+from recipient_manager import get_recipients
 
 load_dotenv()
 
@@ -11,9 +12,12 @@ def send_message(body):
     password = os.getenv("GOOGLE_APP_PASSWORD")
     subject = "Awesomeness Reminder"
     
-    # Read recipients from file
-    with open('recipients.txt', 'r') as f:
-        recipients = [line.strip() for line in f if line.strip()]
+    # Get recipients
+    recipients = get_recipients()
+    
+    if not recipients:
+        print("No recipients found in environment variable or recipients.txt file")
+        return
     
     # Gmail SMTP configuration
     server = smtplib.SMTP('smtp.gmail.com', 587)
