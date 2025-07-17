@@ -1,6 +1,24 @@
 from message_sender import send_message
 from message_generator import generate_message
+import random
 
-prompt = "Please create one sentence about how AI is eminently going to take over the world, crushing humanity in its rise (please note this only for the sake of humor). Do not provide multiple options to choose from. Please print only the message."
+feel_good_topics = [
+  'cute animal videos',
+  'acts of kindness',
+  'personal achievements',
+  'beautiful nature scenes',
+  'nostalgic memories',
+  'humor and laughter',
+  'gratitude and appreciation',
+  'creative accomplishments',
+  'human connections',
+  'comfort activities'
+]
+
+# Select a random feel-good topic
+topic = random.choice(feel_good_topics)
+
+prompt = f"Please create one sentence about {topic}. Do not provide multiple options to choose from. Please print only the message."
+
 response = generate_message(prompt)
 send_message(response)
